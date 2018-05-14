@@ -1,0 +1,12 @@
+server:
+  port: 8085
+management:
+  security:
+    enabled: false      # 不启用安全机制
+encrypt:
+  #key: myKey      #使用对称算法使用此配置(AES)
+  keyStore:        #非对称算法时使用的配置(RSA)
+    location: classpath:/myTest.keystore  # keystroe位置
+    password: crazyit                     # 密钥库的
+    alias: testKey                        # 密钥对的别名
+    secret: crazyit                       # 密钥口令
