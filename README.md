@@ -1,2 +1,2 @@
 # springcloud-config-repo
-springcloud-config配置文件保存位置
+springcloud-config配置文件
