@@ -9,4 +9,4 @@ encrypt:
     location: classpath:/myTest.keystore  # keystroe位置
     password: '{cipher}797e316ce5c1dc9ce02d6eca929ee48c577efd2e379d79171d454a9b816818cd'                     # 密钥库的
     alias: testKey                        # 密钥对的别名
-    secret: '{cipher}'797e316ce5c1dc9ce02d6eca929ee48c577efd2e379d79171d454a9b816818cd                        # 密钥口令
+    secret: 797e316ce5c1dc9ce02d6eca929ee48c577efd2e379d79171d454a9b816818cd                        # 密钥口令
