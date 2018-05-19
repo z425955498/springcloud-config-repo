@@ -1,0 +1,41 @@
+server:
+  port: 8051
+  
+spring:
+  application:
+    name: cloud-client
+  cloud:
+    stream:
+      bindings: 
+        myInput:
+          group: groupA    # 相同组自会有一个实例会收到消息
+          
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8011/eureka/
+      registryFetch-IntervalSeconds: 30
+      
+feign:
+  hystrix:
+    enabled: true
+    
+hystrix:
+  command: 
+    default:
+      circuitreaker:
+        requestVolumeThreshold: 3
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+            
+logging:
+  level:
+    com:
+      itcase:
+        cloud:
+          feign:
+            PersonClient: debug   # 设置feign 客户端日志级别, feign的日志都是debug级别
