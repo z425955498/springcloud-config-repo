@@ -23,14 +23,18 @@ feign:
     enabled: true
     
 hystrix:
+  threadpool: 
+    coreSize: 10    # 线程数  默认10个
   command: 
-    default:
+    default:           # default 对全局生效,可配置为服务名称 或 接口名#方法名
+      fallback:
+        enabled: true  # 是否关闭回退方法
       circuitreaker:
-        requestVolumeThreshold: 3
+        requestVolumeThreshold: 3   # 当在配置时间窗口内达到此数量的失败后，进行短路。默认20个
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 5000
+            timeoutInMilliseconds: 5000     # 超时时间 默认 1000ms
             
 logging:
   level:
