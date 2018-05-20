@@ -39,3 +39,7 @@ logging:
         cloud:
           feign:
             PersonClient: debug   # 设置feign 客户端日志级别, feign的日志都是debug级别
+        
+jsch:
+  port: 22
+  user: zhouhaibo
