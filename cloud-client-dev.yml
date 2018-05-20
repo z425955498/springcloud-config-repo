@@ -43,3 +43,7 @@ logging:
 jsch:
   port: 22
   user: zhouhaibo
+  
+management:
+  security:
+     enabled: false
